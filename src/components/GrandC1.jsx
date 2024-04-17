@@ -1,14 +1,9 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
+import { decrement } from '../actions/count.js'
 
 function GrandC1() {
   const dipatch = useDispatch()
-  // Action Creator
-  const decrement = () => {
-    return {
-      type: 'DECREMENT'
-    }
-  }
 
   return (
     <div style={{ flex: 1 }}>

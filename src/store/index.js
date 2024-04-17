@@ -1,26 +1,13 @@
-import { createStore } from 'redux'
+import { createStore, combineReducers } from 'redux'
+import { composeWithDevTools } from '@redux-devtools/extension';
+import countReducer from '../reducers/count.js'
+import showReducer from '../reducers/show.js'
 
-const initialState = {
-  count: 0
-}
+const reducer = combineReducers({
+  countReducer,
+  showReducer
+})
 
-const reducer = (state = initialState, action) => {
-  switch (action.type) {
-    case 'INCREMENT':
-      return {
-        ...state,
-        count: state.count + 1
-      }
-    case 'DECREMENT':
-      return {
-        ...state,
-        count: state.count - 1
-      }
-    default:
-      return state
-  }
-}
-
-const store = createStore(reducer)
+const store = createStore(reducer, composeWithDevTools())
 
 export default store

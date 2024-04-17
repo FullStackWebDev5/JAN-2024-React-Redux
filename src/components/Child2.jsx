@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 
 function Child2() {
   // Subscribe
-  const count = useSelector(store => store.count)
+  const count = useSelector(store => store.countReducer.count)
   return (
     <div style={{ flex: 1 }}>
       Child2
